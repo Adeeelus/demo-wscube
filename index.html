@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TopTaste by JJ Foods | Premium Toffees</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #8B0000; /* Deep red */
+            --secondary: #FFD700; /* Gold */
+            --accent: #4B0082; /* Royal purple */
+            --light: #FFF8E1; /* Cream */
+            --dark: #3E2723; /* Dark brown */
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(rgba(139, 0, 0, 0.9), rgba(139, 0, 0, 0.9)), url('https://images.unsplash.com/photo-1514517521153-1be72277b32f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 15px 5%;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-icon {
+            background: var(--secondary);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: var(--primary);
+        }
+        
+        .logo-text h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--secondary);
+            line-height: 1.1;
+        }
+        
+        .logo-text p {
+            font-size: 14px;
+            color: #fff;
+            letter-spacing: 1.5px;
+        }
+        
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .contact-item i {
+            color: var(--secondary);
+            font-size: 20px;
+        }
+        
+        .contact-item span {
+            font-size: 16px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(255, 248, 225, 0.9), rgba(255, 248, 225, 0.9)), url('https://images.unsplash.com/photo-1615478503562-ec2d8aa0e24e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            padding: 0 5%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            left: -10%;
+            width: 120%;
+            height: 120%;
+            background: url('https://www.transparenttextures.com/patterns/candy.png');
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 5rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 4.5rem;
+            color: var(--accent);
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hero p {
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            color: var(--dark);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 16px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+            position: relative;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: var(--secondary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .btn-secondary {
+            background: var(--secondary);
+            color: var(--primary);
+            border: 2px solid var(--secondary);
+        }
+        
+        .btn-secondary:hover {
+            background: transparent;
+            color: var(--dark);
+            transform: translateY(-5px);
+        }
+        
+        /* Toffee Varieties Section */
+        .toffee-varieties {
+            padding: 100px 5%;
+            background: var(--light);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .toffee-varieties::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/brushed-alum.png');
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.4rem;
+            color: var(--dark);
+            max-width: 700px;
+            margin: 30px auto 60px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .toffee-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+            margin-top: 40px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .toffee-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .toffee-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .toffee-img {
+            height: 250px;
+            overflow: hidden;
+            background: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .toffee-img img {
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: contain;
+            transition: transform 0.5s ease;
+        }
+        
+        .toffee-card:hover .toffee-img img {
+            transform: scale(1.1);
+        }
+        
+        .toffee-content {
+            padding: 25px;
+            text-align: center;
+            background: white;
+        }
+        
+        .toffee-content h3 {
+            font-size: 24px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .toffee-content p {
+            color: var(--dark);
+            margin-bottom: 20px;
+            min-height: 60px;
+        }
+        
+        .price {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        
+        .flavors {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .flavor-tag {
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 5%;
+            background: var(--primary);
+            color: white;
+            position: relative;
+        }
+        
+        .testimonials::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/brushed-alum-dark.png');
+            opacity: 0.1;
+        }
+        
+        .testimonials .section-title {
+            color: var(--secondary);
+        }
+        
+        .testimonials .section-subtitle {
+            color: white;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+            margin-top: 60px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 35px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+        
+        .rating {
+            color: var(--secondary);
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 25px;
+            font-size: 18px;
+        }
+        
+        .customer {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .customer-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--primary);
+        }
+        
+        .customer-info h4 {
+            font-size: 20px;
+            margin-bottom: 5px;
+            color: var(--secondary);
+        }
+        
+        .customer-info p {
+            color: #ddd;
+        }
+        
+        /* How to Order */
+        .how-to-order {
+            padding: 100px 5%;
+            background: var(--light);
+            text-align: center;
+            position: relative;
+        }
+        
+        .how-to-order::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/candy.png');
+            opacity: 0.1;
+        }
+        
+        .steps {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 60px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .step-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            width: 280px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .step-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .step-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--primary);
+        }
+        
+        .step-number {
+            background: var(--secondary);
+            color: var(--primary);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0 auto 25px;
+        }
+        
+        .step-card h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .step-card p {
+            color: var(--dark);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 70px 5% 30px;
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/dark-mosaic.png');
+            opacity: 0.2;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            color: var(--secondary);
+            margin-bottom: 5px;
+        }
+        
+        .footer-logo p {
+            color: #bbb;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: var(--primary);
+            color: var(--secondary);
+            border-radius: 50%;
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary);
+            color: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .footer-heading {
+            font-size: 22px;
+            margin-bottom: 25px;
+            color: var(--secondary);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-heading::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+        }
+        
+        .footer-links a {
+            display: block;
+            color: #bbb;
+            text-decoration: none;
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+        
+        .hours p {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #555;
+        }
+        
+        .hours p span:first-child {
+            color: var(--secondary);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            margin-top: 50px;
+            border-top: 1px solid #555;
+            color: #777;
+            font-size: 16px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .toffee-animation {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: var(--secondary);
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: float 8s infinite ease-in-out;
+            z-index: 0;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(10deg); }
+            50% { transform: translateY(0) rotate(0deg); }
+            75% { transform: translateY(20px) rotate(-10deg); }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            .hero h2 {
+                font-size: 4rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .top-bar {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero h2 {
+                font-size: 3.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.4rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .steps {
+                gap: 25px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .btn {
+                padding: 14px 30px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Toffee Elements -->
+    <div class="toffee-animation" style="top: 20%; left: 5%;"></div>
+    <div class="toffee-animation" style="top: 40%; left: 90%; animation-delay: -2s;"></div>
+    <div class="toffee-animation" style="top: 70%; left: 15%; animation-delay: -4s;"></div>
+    <div class="toffee-animation" style="top: 30%; left: 80%; animation-delay: -6s;"></div>
+    <div class="toffee-animation" style="top: 85%; left: 70%; animation-delay: -1s;"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="top-bar">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-candy-cane"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>TopTaste</h1>
+                    <p>BY JJ FOODS</p>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <a href="tel:+923001234567" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 10px;">
+                  <i class="fas fa-phone"></i>
+                  <span>+92 300 1234567</span>
+                </a>
+              </div>
+              
+              <div class="contact-item">
+                <a href="https://wa.me/923219876543" target="_blank" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 10px;">
+                  <i class="fab fa-whatsapp"></i>
+                  <span>+92 321 9876543</span>
+                </a>
+              </div>
+              
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Karachi, Pakistan</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Irresistibly Delicious</h2>
+            <h1>Premium Handcrafted Toffees</h1>
+            <p>Experience the perfect blend of tradition and taste with our signature toffees, made from the finest ingredients and crafted with passion</p>
+            <div class="hero-btns">
+                <a href="#toffees" class="btn btn-primary">
+                    <i class="fas fa-gift"></i> Explore Toffees
+                </a>
+                <a href="https://www.facebook.com/TopTasteByJJFoods" target="_blank" class="btn btn-secondary">
+                    <i class="fab fa-facebook"></i> Order on Facebook
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Toffee Varieties Section -->
+    <section class="toffee-varieties" id="toffees">
+        <h2 class="section-title">Our Toffee Collection</h2>
+        <p class="section-subtitle">Each toffee is carefully crafted to deliver a burst of flavor that will leave you craving for more</p>
+        
+        <div class="toffee-grid">
+            <div class="toffee-card">
+                <div class="toffee-img">
+                    <img src="https://scontent.flhe13-1.fna.fbcdn.net/v/t39.30808-6/493315540_1130902585716111_1798397505877660924_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHrDGcpGBxPLtC606u6JARUqUgo3Xu1VgypSCjde7VWDBf0pQYZrFg3pmTh2D4dyRwI7sR5coY4vggLtvHPTCjc&_nc_ohc=J2tvHy2gugwQ7kNvwGWi8vy&_nc_oc=Adm6M8kwuop93yjYt5AeXimG1QqCyn5s0hgF9ExUXQHPtQ6qSBlaud9E9QCaWBCnlKk&_nc_zt=23&_nc_ht=scontent.flhe13-1.fna&_nc_gid=8-SKNuNAWnkJZqL57Ir2rw&oh=00_AfQzYZEakAJSBFx89KHlDwnSZrBAAG3nn7VZZxP9FucAuA&oe=686FFA62" alt="Classic Toffees">
+                </div>
+                <div class="toffee-content">
+                    <h3>Classic Creamy Toffees</h3>
+                    <p>Smooth, buttery toffees with a melt-in-your-mouth texture</p>
+                    <div class="price">Rs. 250 / 250g</div>
+                    <div class="flavors">
+                        <span class="flavor-tag">Original</span>
+                        <span class="flavor-tag">Butterscotch</span>
+                        <span class="flavor-tag">Vanilla</span>
+                    </div>
+                </div>
+            </div>
+                
+            <div class="toffee-card">
+                <div class="toffee-img">
+                    <img src="https://scontent.flhe13-1.fna.fbcdn.net/v/t39.30808-6/489777029_1117767047029665_4720474237027346006_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFb4BbTwGwPBD2VyAlHBCHUYo9fIjfjBbdij18iN-MFt5Rppv0aTwNQ6Hl9QdB9gHwP2iNkoT9lxNX7VUbkHsvh&_nc_ohc=jn5c3DHPJX0Q7kNvwGtn8Fu&_nc_oc=AdmFY20ZFtJhB9SNDSY8Z0hqx6L0ie5QJQ-ematmmQ48uw7sqrTHZdcEDeMflgDmTm4&_nc_zt=23&_nc_ht=scontent.flhe13-1.fna&_nc_gid=ko56hYTIFNxRFMMS3zCdtA&oh=00_AfQI0BDZ1JkdPm1Betza3QYOB9mq5NWgaq42G1VdwsZGhg&oe=68701A08" alt="Fruit Toffees">
+                </div>
+                <div class="toffee-content">
+                    <h3>Fruit Fusion Toffees</h3>
+                    <p>Tangy fruit flavors blended with creamy toffee base</p>
+                    <div class="price">Rs. 280 / 250g</div>
+                    <div class="flavors">
+                        <span class="flavor-tag">Strawberry</span>
+                        <span class="flavor-tag">Mango</span>
+                        <span class="flavor-tag">Orange</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="toffee-card">
+                <div class="toffee-img">
+                    <img src="https://scontent.flhe13-1.fna.fbcdn.net/v/t39.30808-6/489078249_1115326997273670_2963899239217277073_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHQbs_AcVusaTIG1KVC6k1khpiX6OGCbS-GmJfo4YJtL411OcWBvOp_YVkM2T3BAQ8GvuwdrjUQhtuQ91g3lRR1&_nc_ohc=AZu8-C9ScPYQ7kNvwHgSq5l&_nc_oc=Adl5WrNz3skCGPdvyppjUCHNSyavlbJekXml2R3RKPCblOU0z0_f5WsY6HH0cX7FQMc&_nc_zt=23&_nc_ht=scontent.flhe13-1.fna&_nc_gid=eMmV_XMzblI9qMKZT0rZ5Q&oh=00_AfRZynTdQ7z6JWMdjg-kTu581j4hG29V9sw_58TYbKn8GA&oe=686FF909" alt="Nutty Toffees">
+                </div>
+                <div class="toffee-content">
+                    <h3>Nutty Crunch Toffees</h3>
+                    <p>Crunchy almonds and cashews embedded in creamy toffee</p>
+                    <div class="price">Rs. 320 / 250g</div>
+                    <div class="flavors">
+                        <span class="flavor-tag">Almond</span>
+                        <span class="flavor-tag">Cashew</span>
+                        <span class="flavor-tag">Pistachio</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="toffee-card">
+                <div class="toffee-img">
+                    <img src="https://scontent.flhe13-1.fna.fbcdn.net/v/t39.30808-6/489002475_1115326877273682_8335435267464597225_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHuGbLDWFGwvWVlCyR5BNbvC2ve8IMuHb0La97wgy4dvYU3_G5Pcr9P4ILr8ZQx2fxpUEk1QKWnZHNyZrdr7XUk&_nc_ohc=DcaEU8PGm8kQ7kNvwEeMnFC&_nc_oc=AdngTe1t1LYK3vyIyOyw01Y1IAqCbbMIkzT2IZRZVhqQis_7U-lOaUlNKbpdJXW6Ric&_nc_zt=23&_nc_ht=scontent.flhe13-1.fna&_nc_gid=-X3-kz_qOF6tz9V7K99ZRQ&oh=00_AfTekfqhY9Uzaz71EGKRMoKNsyjj09d8lNxEQ2uc4ATTeA&oe=68702C2E" alt="Chocolate Toffees">
+                </div>
+                <div class="toffee-content">
+                    <h3>Chocolate Dipped Toffees</h3>
+                    <p>Creamy toffees coated in rich dark or milk chocolate</p>
+                    <div class="price">Rs. 350 / 250g</div>
+                    <div class="flavors">
+                        <span class="flavor-tag">Dark Chocolate</span>
+                        <span class="flavor-tag">Milk Chocolate</span>
+                        <span class="flavor-tag">White Chocolate</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="toffee-card">
+                <div class="toffee-img">
+                    <img src="">
+                </div>
+                <div class="toffee-content">
+                    <h3>Spiced Delight Toffees</h3>
+                    <p>Traditional flavors with a hint of exotic spices</p>
+                    <div class="price">Rs. 300 / 250g</div>
+                    <div class="flavors">
+                        <span class="flavor-tag">Cardamom</span>
+                        <span class="flavor-tag">Cinnamon</span>
+                        <span class="flavor-tag">Ginger</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="toffee-card">
+                <div class="toffee-img">
+                    <img src="https://scontent.flhe13-1.fna.fbcdn.net/v/t39.30808-6/487464278_1107902831349420_436758948004680929_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHs2Rhb3bBc7bI5mJJ1bTIUdytqPJW8mlB3K2o8lbyaUHxP-YA-y9b0FOhiIycwF0T_JEKJXns5hZE8ggdX1v-f&_nc_ohc=M9NhCfWFHUcQ7kNvwGSiu8P&_nc_oc=AdkoXVxYFeXrC4ainhwuwYbcPGIwVO8zaQlGQHxnmXiMYKy7rrmsq3uVG2OQ_9bP8fI&_nc_zt=23&_nc_ht=scontent.flhe13-1.fna&_nc_gid=jdMU-gBtvQQLPB4FfyMANQ&oh=00_AfTwWsbERy5Kp69SZyV2MUSwFau_qlAeiTsAh6E_boijSA&oe=68701C94" alt="Gift Packs">
+                </div>
+                <div class="toffee-content">
+                    <h3>Premium Gift Packs</h3>
+                    <p>Beautifully packaged assorted toffees for special occasions</p>
+                    <div class="price">Rs. 500 - Rs. 2000</div>
+                    <div class="flavors">
+                        <span class="flavor-tag">Assorted</span>
+                        <span class="flavor-tag">Customized</span>
+                        <span class="flavor-tag">Festive</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2 class="section-title">Sweet Reviews</h2>
+        <p class="section-subtitle">What our customers say about our toffees</p>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"These are the best toffees I've ever tasted! The creamy texture and perfect balance of sweetness keeps me coming back for more."</p>
+                <div class="customer">
+                    <div class="customer-img">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="customer-info">
+                        <h4>Ayesha Khan</h4>
+                        <p>Regular Customer</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="testimonial-text">"I ordered the assorted gift pack for a wedding, and everyone couldn't stop raving about the toffees. The packaging was beautiful too!"</p>
+                <div class="customer">
+                    <div class="customer-img">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="customer-info">
+                        <h4>Bilal Ahmed</h4>
+                        <p>Event Planner</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"The nutty crunch toffees are my absolute favorite. Perfect combination of creamy toffee and crunchy almonds. Simply addictive!"</p>
+                <div class="customer">
+                    <div class="customer-img">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="customer-info">
+                        <h4>Fatima Raza</h4>
+                        <p>Food Blogger</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Order Section -->
+    <section class="how-to-order">
+        <h2 class="section-title">How To Order</h2>
+        <p class="section-subtitle">Get our delicious toffees in just 3 simple steps</p>
+        
+        <div class="steps">
+            <div class="step-card" onclick="document.getElementById('toffees').scrollIntoView({ behavior: 'smooth' });" style="cursor: pointer;">
+
+                <div class="step-number">1</div>
+                <h3>Choose Your Toffees</h3>
+                <p>Browse our delicious toffee varieties and select your favorites</p>
+            </div>
+            
+            <div class="step-card" onclick="document.getElementById('order-form').scrollIntoView({ behavior: 'smooth' });" style="cursor: pointer;">
+
+                <div class="step-number">2</div>
+                <h3>Place Your Order</h3>
+                <p>Message us on Facebook or WhatsApp with your order details</p>
+            </div>
+            
+            <div class="step-card" onclick="showOrderForm()" style="cursor: pointer;">
+
+                <div class="step-number">3</div>
+                <h3>Enjoy Delivery</h3>
+                <p>Receive your fresh toffees at your doorstep anywhere in Karachi</p>
+            </div>
+        </div>
+    </section>
+    <section class="order-form" id="order-form" style="padding: 80px 5%; background: #fff;">
+        <h2 class="section-title">Place Your Order</h2>
+        <p class="section-subtitle">Please fill out your details and we’ll get back to you</p>
+      
+        <form style="max-width: 600px; margin: auto;">
+          <input type="text" placeholder="Full Name" required style="width: 100%; padding: 12px; margin-bottom: 15px;">
+          <input type="text" placeholder="Contact Number" required style="width: 100%; padding: 12px; margin-bottom: 15px;">
+          <textarea placeholder="Address for Delivery" required style="width: 100%; padding: 12px; margin-bottom: 15px;"></textarea>
+          <select required style="width: 100%; padding: 12px; margin-bottom: 15px;">
+            <option value="">Select Toffee Type</option>
+            <option>Classic Creamy</option>
+            <option>Fruit Fusion</op  tion>
+            <option>Nutty Crunch</option>
+            <option>Chocolate Dipped</option>
+            <option>Spiced Delight</option>
+            <option>Premium Gift Pack</option>
+          </select>
+          <button type="submit" style="padding: 12px 25px; background: var(--primary); color: white; border: none; border-radius: 10px;">Submit Order</button>
+        </form>
+      </section>
+      
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-about">
+                <div class="footer-logo">
+                    <h3>TopTaste by JJ Foods</h3>
+                    <p>Premium Handcrafted Toffees</p>
+                </div>
+                <p>Since 2010, we've been crafting the finest toffees using traditional methods and the highest quality ingredients. Our passion is creating sweet moments for our customers.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/TopTasteByJJFoods" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-hours">
+                <h4 class="footer-heading">Opening Hours</h4>
+                <div class="hours">
+                    <p><span>Monday - Friday:</span> <span>9:00 AM - 8:00 PM</span></p>
+                    <p><span>Saturday:</span> <span>10:00 AM - 9:00 PM</span></p>
+                    <p><span>Sunday:</span> <span>11:00 AM - 6:00 PM</span></p>
+                    <p><span>Delivery Hours:</span> <span>10:00 AM - 7:00 PM</span></p>
+                </div>
+            </div>
+            
+            <div class="footer-contact">
+                <h4 class="footer-heading">Contact Us</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Gulshan-e-Iqbal, Karachi, Pakistan</p>
+                <p><i class="fas fa-phone"></i> +92 300 1234567</p>
+                <p><i class="fas fa-envelope"></i> info@toptastejjfoods.com</p>
+                <p><i class="fab fa-whatsapp"></i> +92 321 9876543</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4 class="footer-heading">Quick Links</h4>
+                <a href="#">Home</a>
+                <a href="#toffees">Toffee Collection</a>
+                <a href="#">About Us</a>
+                <a href="#">Gift Packs</a>
+                <a href="#">Testimonials</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 TopTaste by JJ Foods. All Rights Reserved.</p>
+            <p>Karachi's Finest Handcrafted Toffees</p>
+        </div>
+    </footer>
+    <script>
+        function showOrderForm() {
+          const form = document.getElementById('order-form');
+          form.style.display = 'block';
+          form.scrollIntoView({ behavior: 'smooth' });
+        }
+      </script>
+      
+</body>
+</html>
